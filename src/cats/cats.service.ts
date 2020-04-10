@@ -6,7 +6,7 @@ export class CatsService {
 
   private readonly cats: Cat[] = [];
 
-  create(cat: Cat) {
+  async create(cat: Cat){
     this.cats.push(cat);
   }
 

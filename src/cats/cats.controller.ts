@@ -1,9 +1,12 @@
 import { Controller, Get, Req, Redirect, Query, Res, Param, Post, Body } from '@nestjs/common';
 import { Request, Response} from 'express';
 import {CreateCatDto} from './dto/create-cat.dto'
+import { CatsService } from './cats.service';
 
 @Controller('cats')
 export class CatsController {
+  constructor(private catsService:CatsService){
+  }
   @Get()
   findAll(): string {
     return 'This action returns all cats';
