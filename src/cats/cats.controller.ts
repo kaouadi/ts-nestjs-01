@@ -1,5 +1,6 @@
-import { Controller, Get, Req, Redirect, Query, Res, Param } from '@nestjs/common';
+import { Controller, Get, Req, Redirect, Query, Res, Param, Post, Body } from '@nestjs/common';
 import { Request} from 'express';
+import {CreateCatDto} from './dto/create-cat.dto'
 
 @Controller('cats')
 export class CatsController {
@@ -29,6 +30,11 @@ export class CatsController {
    console.log(params.id);
    return `This action returns a #${params.id} cat`;
   }
+  @Post()
+  async create(@Body() createCatDto: CreateCatDto) {
+    return `This action adds a new cat${createCatDto.age} || ${createCatDto.name}`;
+  }
+  
   
 
 }

@@ -13,6 +13,7 @@ describe('Cats Controller', () => {
   });
 
   it('should be defined', () => {
+    console.log('XXXXX');
     expect(controller).toBeDefined();
   });
 });
