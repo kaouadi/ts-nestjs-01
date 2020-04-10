@@ -21,5 +21,6 @@ describe('AppController (e2e)', () => {
       .post('/cats')
       .send({name: 'toto', age: 22, breed: 'red'})
       .expect(201);
+    expect(response.body.age).toBe(34);
   });
 });
