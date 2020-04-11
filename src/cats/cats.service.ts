@@ -8,6 +8,7 @@ export class CatsService {
 
   async create(cat: Cat){
     this.cats.push(cat);
+    
   }
 
   findAll(): Cat[] {

@@ -34,13 +34,9 @@ export class CatsController {
    return `This action returns a #${params.id} cat`;
   }
   @Post()
-  async create(@Body() createCatDto: CreateCatDto, @Res() res: Response): Promise<any> {
+  create(@Body() createCatDto: CreateCatDto, @Res() res: Response){
     //return `This action adds a new cat${createCatDto.age} || ${createCatDto.name}`;
-    return res.json({
-      name: 'no',
-      breed: 'no',
-      age: 34
-    });
+    return res.json({name: 'no', breed: 'no',  age: 34 });
   }
   
   
