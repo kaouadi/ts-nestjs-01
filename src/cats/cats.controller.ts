@@ -2,10 +2,11 @@ import { Controller, Get, Req, Redirect, Query, Res, Param, Post, Body } from '@
 import { Request, Response} from 'express';
 import {CreateCatDto} from './dto/create-cat.dto'
 import { CatsService } from './cats.service';
+import { Connection } from 'typeorm';
 
 @Controller('cats')
 export class CatsController {
-  constructor(private catsService:CatsService){
+  constructor(private catsService:CatsService, private connection: Connection){
   }
   @Get()
   findAll(): string {
